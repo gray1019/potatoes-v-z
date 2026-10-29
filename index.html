@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Potato Paradise: Spud Vacation Defense</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+  <div id="lang" title="Language / Langue"><button data-l="en">EN</button><button data-l="fr">FR</button></div>
+  <div id="top">
+    <div class="stat">Score <b id="sScore">0</b></div>
+    <div class="stat">Sun Chips <b id="sSun">150</b></div>
+    <div class="stat">Wave <b id="sWave">0</b>/<span id="sWaves">3</span></div><div class="stat">Coins <b id="sCoins">0</b></div>
+    <div class="stat">Resort HP <span class="bar"><i id="sHp"></i></span></div>
+    <div class="stat">Enemies <b id="sEnemies">0</b>
+      <span class="bar thin"><i id="sProg"></i></span></div>
+    <button id="speedBtn" title="Toggle game speed">Speed x1</button><button id="pauseBtn" title="Pause (P)">Pause</button><button id="menuBtn" title="Settings / pause menu">Menu</button><button id="muteBtn" title="Mute / unmute">Sound ON</button>
+  </div>
+  <div id="cards"></div>
+  <canvas id="c" width="900" height="540"></canvas>
+  <div id="hint">Pick a potato card, then click a lawn square. Click falling Sun Chips to collect them. Keys 1-8 pick cards, S = shovel, R = rake, P = pause, ESC cancels. Click coins too! At night, day spuds sleep.</div>
+
+  <div id="title" class="screen">
+    <canvas id="tc" width="900" height="540"></canvas>
+    <div class="tbox">
+      <div class="logo"><span>POTATO</span><span>PARADISE</span></div>
+      <div class="tag" id="tag">SPUD VACATION DEFENSE</div>
+      <div class="tmenu">
+        <button class="big" id="playBtn">PLAY</button>
+        <button class="big" id="modesBtn" style="background:linear-gradient(#ffb74d,#ef6c00);box-shadow:0 6px 0 #a74500">GAME MODES</button>
+        <button class="big alt" id="howBtn">HOW TO PLAY</button>
+        <button class="big sm" id="tsound">Sound: ON</button>
+      </div>
+      <div id="tstats"></div>
+    </div>
+    <div class="ver">Save the vacation. Defend the resort.</div>
+  </div>
+
+  <div id="map" class="screen menu hidden"></div>
+  <div id="brief" class="screen menu hidden"></div>
+  <div id="shop" class="screen menu hidden"></div>
+  <div id="modes" class="screen menu hidden"></div>
+  <div id="cheat" class="screen menu hidden"></div>
+
+  <div id="how" class="screen hidden">
+    <h2>HOW TO PLAY</h2>
+    <ul>
+      <li><b>Sun Chips</b> pay for potatoes. They fall from the sky and SunSpuds make them. Click them!</li>
+      <li><b>Levels:</b> 25 levels in 5 worlds. Before each level you see the zombies coming and pick up to <b>8 potatoes</b>. Beating a level unlocks new potatoes and the next level.</li>
+      <li><b>Game Modes:</b> <b>Endless</b> (pick your units, survive forever), <b>Random Units</b> (a random deck that always has a Sun maker) and <b>Randomizer</b> (no Sun: place free one-use units from a conveyor belt).</li>
+      <li><b>Lanes:</b> zombies walk right-to-left; potatoes only shoot their own lane.</li>
+      <li><b>Coins:</b> zombies sometimes drop coins. Spend them in the <b>Shop</b> on Rakes, starting Sun, resort armor and <b>upgrade cards</b> (Twin Sun, Gatling, Mega Bunker).</li>
+      <li><b>Vacation Mood:</b> kills and safety raise a potato's mood; bites, resort hits and fallen friends lower it. Higher mood = faster and stronger!</li>
+      <li><b>Night World:</b> no Sun Chips fall from the sky! Day spuds (&#9728; Surfer, Coconut, Ice) fall asleep, while night spuds (&#9790; Glow, Moon) wake up. Moon Spuds make your Sun Chips.</li>
+      <li><b>Controls:</b> P pauses, the Speed button fast-forwards, S is the shovel.</li>
+      <li><b>Lose</b> if the resort hits 0 HP. <b>Win</b> by surviving all waves. Every 5th level has a boss!</li>
+    </ul>
+    <button class="big" id="backBtn">BACK</button>
+  </div>
+
+  <div id="end" class="screen hidden"></div>
+  <div id="pausemenu" class="screen hidden"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
